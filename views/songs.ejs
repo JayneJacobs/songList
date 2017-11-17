@@ -1,0 +1,39 @@
+<% include partials/header %>
+
+<div class="container">
+   <header class="jumbotron" >
+    <h1>This is the Asylum Wind Band Song List</h1>
+    <p>Song List with Sample and Music Sheet</p>
+    <p>
+    <a href = "songs/new" class="btn btn-primary btn-lg">Add a New Song</a>
+    </p>
+
+    </header>
+ 
+
+
+    <div class="row text-center"  style="display:flex; flex-wrap: wrap;" >
+    
+    <% songs.forEach(function(song){ %>
+        <div  class="col-md-3 col-sm-6">
+            <li>
+                <div class="thumbnail" >
+                    <a href="<%= song.link %>"  target="_blank"> <%= song.name %></a>
+                :
+                    <div class="caption">
+                        <a href ="<%= song.music %>"  target="_blank">Sheet Music</a>
+                    </div>    
+                </div>
+                
+             </li>   
+        </div>
+        
+    <% }); %>
+
+
+    </div>
+
+ </div>   
+
+<% include partials/footer %>
+
