@@ -16,16 +16,25 @@
     
     <% songs.forEach(function(song){ %>
         <div  class="col-md-3 col-sm-6">
-            <li>
+         
                 <div class="thumbnail" >
                     <a href="<%= song.link %>"  target="_blank"> <%= song.name %></a>
                 :
                     <div class="caption">
                         <a href ="<%= song.music %>"  target="_blank">Sheet Music</a>
-                    </div>    
+                    </div>   
+                     <div class="caption">
+                         <p>
+                            <%= song.index %> 
+                         </p>
+                         <p>
+                             <a href="/songs/<%= song._id %>" class="btn btn-primary" >More Info</a>
+                         </p>
+                        
+                    </div>  
                 </div>
                 
-             </li>   
+               
         </div>
         
     <% }); %>
