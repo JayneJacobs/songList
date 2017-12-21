@@ -1,0 +1,35 @@
+<% include ../partials/header %> 
+
+ <div class="container">
+     <header class="jumbotron">
+         <div class="container">
+             <h1>Welcome our Song List!</h1>
+             <p>View our hand-picked songs</p>
+             <p>
+                <a class="btn btn-primary btn-large" href="/songs/new">Add New Song</a>
+             </p>
+         </div>
+     </header>
+     
+     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% songs.forEach(function(song){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                     <p>
+                        Song Number:<%= song.index %> 
+                    </p>
+                    <a href="<%= song.link %>"  target="_blank"> <%= song.name %> Link to version:</a>
+                               
+                    <div class="caption">
+                        <a href ="<%= song.music %>"  target="_blank">Sheet Music</a>
+                    </div>   
+                    <p>
+                       <a href="/songs/<%= song._id %>" class="btn btn-primary">More Info</a>
+                   </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<% include ../partials/footer %>

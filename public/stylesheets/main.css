@@ -1,0 +1,28 @@
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+body{
+    background-color: purple;
+    margin: 20,10;
+}
+
+.row {
+    background-color: lightgrey;
+}
+
+h1 {
+    color: white;
+}
+
+
+#delete-form {
+    display: inline;
+}
