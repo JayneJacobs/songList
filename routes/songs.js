@@ -69,7 +69,7 @@ router.get("/:id/edit", middleware.checkSongOwnership, function(req, res){
 
 // UPDATE SONG ROUTE
 router.put("/:id",middleware.checkSongOwnership, function(req, res){
-    // find and update the correct song
+  
     Song.findByIdAndUpdate(req.params.id, req.body.song, function(err, updatedSong){
        if(err){
            res.redirect("/songs");

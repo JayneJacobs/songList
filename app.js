@@ -10,6 +10,7 @@ var express     = require("express"),
   methodOverride = require("method-override"),
   User          = require("./models/user"),
   removeDB      = require("./remove"),
+
   seedDB        = require("./seeds");
   
   
@@ -20,12 +21,13 @@ var noteRoutes    = require("./routes/notes"),
 var url = process.env.DATABASEURL || "mongodb://localhost/song_lists3";
 mongoose.connect(url);
 
+app.locals.moment = require('moment');
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");   
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
-// removeDB();
+
 // seedDB();
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
@@ -34,6 +36,7 @@ app.use(require("express-session")({
     saveUninitialized: false
 }));
 
+app.locals.moment = require('moment');
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));

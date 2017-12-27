@@ -6,6 +6,7 @@ var songSchema = new mongoose.Schema({
     name: String,
     link: String,
     music: String,
+    CreatedAt: { type: Date, default: Date.now },
     author: {
       id: {
          type: mongoose.Schema.Types.ObjectId,
